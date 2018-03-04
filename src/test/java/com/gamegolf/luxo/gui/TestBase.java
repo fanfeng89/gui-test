@@ -13,8 +13,8 @@ import static org.junit.Assert.fail;
 
 public class TestBase {
     public static String BASE_URL = "http://luxo.gamegolf.com";
-    public static String USER_NAME = "fan@gameyourgame.com";
-    public static String USER_PWD = "game";
+    public static String USER_NAME = "";
+    public static String USER_PWD = "";
     protected WebDriver driver;
     protected StringBuffer verificationErrors = new StringBuffer();
 
