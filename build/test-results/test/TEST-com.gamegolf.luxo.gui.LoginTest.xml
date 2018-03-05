@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gamegolf.luxo.gui.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-03-05T13:22:10" hostname="FanF-PC" time="52.722">
+  <properties/>
+  <testcase name="testLogin" classname="com.gamegolf.luxo.gui.LoginTest" time="52.722"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
