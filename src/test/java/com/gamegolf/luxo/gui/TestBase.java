@@ -43,7 +43,7 @@ public class TestBase {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown(){
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
