@@ -10,7 +10,7 @@ public class ProfileTest extends TestBase{
         public void testPersonalInfoUpdate(){
             login();
             driver.get(BASE_URL + "/my-courses/list");
-            driver.findElement(By.linkText("Profile")).click();
+            driver.findElement(By.xpath("//a[text()='Profile']")).click();
             assertEquals("General", driver.findElement(By.linkText("General")).getText());
             assertEquals("Units", driver.findElement(By.linkText("Units")).getText());
             driver.findElement(By.id("first_name")).clear();
@@ -54,7 +54,7 @@ public class ProfileTest extends TestBase{
             driver.findElement(By.id("country")).sendKeys("Ireland");
             driver.findElement(By.cssSelector("button.btn.btn-blue")).click();
             try {
-                assertEquals("Unit 9 G", driver.findElement(By.id("address")).getAttribute("value"));
+                assertEquals("unit 9 G", driver.findElement(By.id("address")).getAttribute("value"));
             } catch (Error e) {
                 verificationErrors.append(e.toString());
             }

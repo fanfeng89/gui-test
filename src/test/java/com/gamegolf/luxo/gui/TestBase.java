@@ -5,22 +5,24 @@ import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class TestBase {
-    public static String BASE_URL = "http://luxo.gamegolf.com";
-    public static String USER_NAME = "";
-    public static String USER_PWD = "";
+    public static String BASE_URL = "Luxo URL";
+    public static String USER_NAME = "user name";
+    public static String USER_PWD = "password";
     protected WebDriver driver;
     protected StringBuffer verificationErrors = new StringBuffer();
 
     @Before
     public void init(){
-        driver = new FirefoxDriver();
+        //driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver","chromedriver.exe location in your system");
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -30,7 +32,7 @@ public class TestBase {
         driver.findElement(By.id("email")).sendKeys(USER_NAME);
         driver.findElement(By.id("password")).sendKeys(USER_PWD);
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        isElementPresent(By.xpath("//div[@id='header']/div/md-grid-list/div/md-grid-tile[2]/figure/div/div/div/div"));
+        isElementPresent(By.xpath("//a[text()='Profile']"));
     }
 
     protected boolean isElementPresent(By by) {

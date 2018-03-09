@@ -12,7 +12,7 @@ public class LoginTest extends TestBase {
     public void testLogin(){
         login();
         try {
-            assertTrue(isElementPresent(By.xpath("//div[@id='header']/div/md-grid-list/div/md-grid-tile[2]/figure/div/div/div/div")));
+            assertTrue(isElementPresent(By.xpath("//a[text()='Profile']")));
         } catch (Error e) {
             verificationErrors.append(e.toString());
         }
